@@ -1,5 +1,6 @@
 def find_unique_value(some_list: list) -> int or float:
-    for num in some_list:
+    unique_numbers = set(some_list)
+    for num in unique_numbers:
         if some_list.count(num) == 1:
             return num
 
