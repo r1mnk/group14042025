@@ -1,9 +1,13 @@
 def popular_words(text: str, words: list[str]) -> dict[str, int]:
     text = text.lower()
     text_words = text.split()
-    result = {word: text_words.count(word) for word in words}
-    return result
+    word_set = set(words)
+    result = {word: 0 for word in words}
 
+    for word in text_words:
+        if word in word_set:
+            result[word] += 1
+    return result
 
 assert popular_words(
     """When I was One I had just begun When I was Two I was nearly new """,
